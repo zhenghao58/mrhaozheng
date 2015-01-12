@@ -148,13 +148,16 @@ fieldset[disabled] .btn-primary.active {
     font-size: 22px;
     font-weight: bold;
     color: #6A7989;
-    background-color: rgba(203, 203, 203, 0);
+    background-color: transparent;
 }
 .btn-ml:hover{
     border-bottom-width: 4px;
     border-top-width: 4px;
     border-right-width: 0px;
     border-left-width: 0px;
+}
+.btn-ml:visited{
+    color: #6A7989;
 }
 .btn-xl:hover,
 .btn-xl:focus,
