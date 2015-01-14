@@ -2,6 +2,7 @@
 <html lang="en">
 <head><% include head.ejs %></head>
 
+
 <body id="page-top" class="index">
 
     <!-- Navigation & Header -->
@@ -27,7 +28,31 @@
     <% include modal.ejs %>
     <!-- Default Javascript -->
     <% include js.ejs %>
+    <script type="text/javascript">
+      $("document").ready(function() {
+        getData();
+      });
+      
+      function getData() {
+        // use the get() shorthand method to request a resource
+        $.get("testdata.txt", successFn);
+        
+        // the load() shorthand method performs the common task of 
+        // retrieving HTML content and inserts the returned 
+        // content into the specified element. 
+        //$("#content").load("testdata.html");
+          
+        // you can also specify a portion of the content to load
+        //$("#content").load("testdata.html #p2");
+      }
 
+      function successFn(result) {
+        console.log(result);
+      }
+      function errorFn(xhr, status, strErr) {
+        alert(strErr);
+      }
+  </script>
 </body>
 
 </html>
