@@ -264,7 +264,9 @@ fieldset[disabled] .btn-xl.active {
     border-color: #fed136;
     background-color: #fed136;
 }
-
+ul {
+    list-style-type: none;
+}
 .navbar-default .navbar-toggle .icon-bar {
     background-color: #fff;
 }
@@ -785,7 +787,9 @@ section#contact:-ms-input-placeholder {
 }
 
 section#contact .text-danger {
-    color: #e74c3c;
+    color: #FE3654;
+    font-family: "Helvetica Neue", Helvetica,Arial,sans-serif;
+    font-size: 20px;
 }
 
 footer {
@@ -827,7 +831,9 @@ ul.social-buttons li a {
     -moz-transition: all .3s;
     transition: all .3s;
 }
-
+.modal-body li{
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;;
+}
 ul.social-buttons li a:hover,
 ul.social-buttons li a:focus,
 ul.social-buttons li a:active {
