@@ -1,37 +1,64 @@
-<div class="row">
-    <div class="col-lg-12 text-center">
-        <h2 class="section-heading">Contact Me</h2>
-        <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <h2 class="section-heading">Contact Me</h2>
+            <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+            <form name="sentMessage" id="contactForm" novalidate>
+                <div class="row control-group">
+                    <div class="row control-group">
+                        <span class="input input--haruki">
+                            <input class="input__field input__field--haruki" type="text" id="fname" required>
+                            <label class="input__label input__label--haruki" for="name">
+                                <span class="input__label-content input__label-content--haruki">First Name</span>
+                            </label>
+                            <p class="help-block text-danger"></p>
+                        </span>
+                    </div>
+                </div>
+                <div class="row control-group">
+                    <div class="row control-group">
+                        <span class="input input--haruki">
+                            <input class="input__field input__field--haruki" type="text" id="lname" required>
+                            <label class="input__label input__label--haruki" for="lname">
+                                <span class="input__label-content input__label-content--haruki">Last Name</span>
+                            </label>
+                            <p class="help-block text-danger"></p>
+                        </span>
+                    </div>
+                </div>
+                <div class="row control-group">
+                    <div class="row control-group">
+                        <span class="input input--haruki">
+                            <input class="input__field input__field--haruki" type="email" id="email" required data-validation-required-message="Please enter your email.">
+                            <label class="input__label input__label--haruki" for="email">
+                                <span class="input__label-content input__label-content--haruki">Email</span>
+                            </label>
+                            <p class="help-block text-danger"></p>
+                        </span>
+                    </div>
+                </div>
+                <div class="row control-group">
+                    <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                            <label>Message</label>
+                            <textarea rows="5" class="form-control" placeholder="Message" id="message" required data-validation-required-message="Please enter a message."></textarea>
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="col-lg-12 text-center">
+                    <div id="success"></div>
+                    <button type="submit" class="btn btn-ml">Submit</button>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
-<form name="sentMessage" id="contactForm" method='post'>
-    <span class="input input--haruki">
-        <input class="input__field input__field--haruki" type="text" id="fname" required>
-        <label class="input__label input__label--haruki" for="name">
-            <span class="input__label-content input__label-content--haruki">First Name</span>
-        </label>
-        <p class="help-block text-danger"></p>
-    </span>
-    <span class="input input--haruki">
-        <input class="input__field input__field--haruki" type="text" id="lname" required>
-        <label class="input__label input__label--haruki" for="lname">
-            <span class="input__label-content input__label-content--haruki">Last Name</span>
-        </label>
-        <p class="help-block text-danger"></p>
-    </span>
-    <span class="input input--haruki">
-        <input class="input__field input__field--haruki" type="email" id="email" required data-validation-required-message="Please enter your email.">
-        <label class="input__label input__label--haruki" for="email">
-            <span class="input__label-content input__label-content--haruki">Email</span>
-        </label>
-        <p class="help-block text-danger"></p>
-    </span>
-    <div class="clearfix"></div>
-    <div class="col-lg-12 text-center">
-        <div id="success"></div>
-        <button type="submit" class="btn btn-ml">Submit</button>
-    </div>
-</form>
 
 <!-- previous form -->
 <!--     <section id="contact">

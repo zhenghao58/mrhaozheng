@@ -1,13 +1,19 @@
 .input {
 	position: relative;
 	z-index: 1;
-	display: inline-block;
+	display: block;
 	margin: 1em;
-	max-width: 400px;
+	max-width: 750px;
 	width: calc(100% - 2em);
 	vertical-align: top;
 }
 
+.control-group {
+	margin: 1em 0 1em;
+}
+.input.message {
+	display: block;
+}
 .input__field {
 	position: relative;
 	display: inline-block;
