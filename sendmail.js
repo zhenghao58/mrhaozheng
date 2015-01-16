@@ -1,7 +1,9 @@
 var nodemailer = require('nodemailer');
 var smtpTransport = require('nodemailer-smtp-transport');
 var wellknown = require('nodemailer-wellknown');
+
 var config = wellknown('Gmail');
+
 // create reusable transporter object using SMTP transport
 var transporter = nodemailer.createTransport(smtpTransport({
     service: 'Gmail',
@@ -15,21 +17,27 @@ var transporter = nodemailer.createTransport(smtpTransport({
 // the same transporter object for all e-mails
 
 // setup e-mail data with unicode symbols
-var mailOptions = {
-    from: 'Hao Zheng ✔ <hoogle58@gmail.com>', // sender address
-    to: 'hz837@nyu.edu, zhenghao58@vip.qq.com', // list of receivers
-    subject: 'Hello ✔', // Subject line
-    text: 'Hello world ✔', // plaintext body
-    html: '<b>Hello world ✔</b>' // html body
-};
 
-module.exports = function(){
-    transporter.sendMail(mailOptions, function(error, info){
+
+module.exports = function(name, email, message){
+  var mailOptions = {
+    from: {
+    name: name,
+    address: email
+},// sender address
+    to: 'hz837@nyu.edu', // list of receivers
+    subject: 'Message from ' + name, // Subject line
+    text: message+"\n"+"\n"+email// plaintext body
+  };
+  transporter.sendMail(mailOptions, function(error, info){
     if(error){
         console.log(error);
     }else{
         console.log('Message sent: ' + info.response);
     }
-});
+  });
 };
+
+
 // send mail with defined transport object
+

@@ -4,7 +4,14 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var multer  = require('multer')
+var nodemailer = require('nodemailer');
+var smtpTransport = require('nodemailer-smtp-transport');
+var wellknown = require('nodemailer-wellknown');
+var config = wellknown('Gmail');
 var routes = require('./routes/index');
+var sendmail = require('./sendmail')
+
 
 
 var app = express();
@@ -18,10 +25,21 @@ app.use(favicon(path.join(__dirname,'public','favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(multer());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
+app.post('/sendmail', function(req, res){
+  var name = req.body.fname+" "+req.body.lname;
+  var email = req.body.email;
+  var message = req.body.message;
+  console.log([message,"from",name,email].join(' '));
+  sendmail(name, email, message);
+  res.redirect('back');
+});
+
+
 
 
 // catch 404 and forward to error handler
