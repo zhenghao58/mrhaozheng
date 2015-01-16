@@ -10,7 +10,8 @@ var smtpTransport = require('nodemailer-smtp-transport');
 var wellknown = require('nodemailer-wellknown');
 var config = wellknown('Gmail');
 var routes = require('./routes/index');
-var sendmail = require('./sendmail')
+var sendmail = require('./sendmail');
+var db =require('./db');
 
 
 
