@@ -12,7 +12,7 @@ var config = wellknown('Gmail');
 var routes = require('./routes/index');
 var sendmail = require('./sendmail');
 var db =require('./db');
-
+var CommentSchema = require('./schema/comment')
 
 
 var app = express();
@@ -37,7 +37,20 @@ app.post('/sendmail', function(req, res){
   var message = req.body.message;
   console.log([message,"from",name,email].join(' '));
   sendmail(name, email, message);
-  res.redirect('back');
+  var comment = new CommentSchema({
+    email: email,
+    name: name,
+    message: message
+  })
+  comment.save(function(err){
+    if (err){
+      console.log(err);
+      res.status(500).json({status:'failure'});
+    } else{
+      res.redirect('back'))
+    };
+  })
+  // res.redirect('back');
 });
 
 
