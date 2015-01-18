@@ -47,10 +47,9 @@ app.post('/sendmail', function(req, res){
       console.log(err);
       res.status(500).json({status:'failure'});
     } else{
-      res.redirect('back'))
+      res.redirect('back');
     };
   })
-  // res.redirect('back');
 });
 
 
