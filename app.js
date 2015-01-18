@@ -11,6 +11,7 @@ var wellknown = require('nodemailer-wellknown');
 var config = wellknown('Gmail');
 var routes = require('./routes/index');
 var sendmail = require('./sendmail');
+var comments = require('./routes/comments');
 var db =require('./db');
 var CommentSchema = require('./schema/comment')
 
@@ -51,6 +52,7 @@ app.post('/sendmail', function(req, res){
     };
   })
 });
+app.use('/comments', comments);
 
 
 

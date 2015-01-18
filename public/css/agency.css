@@ -65,6 +65,11 @@ p.large {
     font-size: 16px;
 }
 
+.btn-ml a,
+.btn-ml a:hover{
+    text-decoration: none;
+    color: #6A7989;
+}
 a,
 a:hover,
 a:focus,
