@@ -82,6 +82,9 @@ a {
     color: #fed136;
 }
 
+h4 a{
+    color: #333;
+}
 a:hover,
 a:focus,
 a:active,
@@ -482,6 +485,9 @@ section h3.section-subheading {
     background-color: #fff;
 }
 
+.portfolio-caption i{
+    opacity: 0.4;
+}
 #portfolio .portfolio-item .portfolio-caption h4 {
     margin: 0;
     text-transform: none;
